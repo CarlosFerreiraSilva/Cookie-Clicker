@@ -1,0 +1,19 @@
+body, html {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("/images/starfall-gif-46.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+.cookie{
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.cookie :active{
+    transform: scale(1.1);
+}
