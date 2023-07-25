@@ -14,7 +14,6 @@
     const backgroundmusic = document.getElementById('backgroundMusic');
     const image = document.getElementById('pauseButton');
     // const texto = document.getElementById('musicText');
-        backgroundmusic.play();
         // texto.innerHTML = "Now Playing Art of Silence";
 
         // function stopBackgroundAudio(){
