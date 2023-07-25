@@ -416,7 +416,7 @@ var VanillaTilt = (function () {
        * @param {startY} settings.startY - the starting tilt on the Y axis, in degrees. Default: 0
        * @param {number} settings.perspective - Transform perspective, the lower the more extreme the tilt gets
        * @param {string} settings.easing - Easing on enter/exit
-       * @param {number} settings.scale - 2 = 200%, 1.5 = 150%, etc..
+      //  * @param {number} settings.scale - 2 = 200%, 1.5 = 150%, etc..
        * @param {number} settings.speed - Speed of the enter/exit transition
        * @param {boolean} settings.transition - Set a transition on enter/exit
        * @param {string|null} settings.axis - What axis should be enabled. Can be "x" or "y"
@@ -439,7 +439,7 @@ var VanillaTilt = (function () {
           startY: 0,
           perspective: 1000,
           easing: "cubic-bezier(.03,.98,.52,.99)",
-          scale: 1,
+          // scale: 1,
           speed: 300,
           transition: true,
           axis: null,
