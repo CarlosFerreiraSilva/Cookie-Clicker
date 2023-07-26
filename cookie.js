@@ -14,7 +14,7 @@ function AutoClickerClicked(){
         displayCookies()
         autoclickers += 1;
         autoclickercost *= 1.3;
-        displayAutoClicker.innerHTML = ("Auto Clicker custa" + ' ' + Math.floor(autoclickercost*100)/100 + " cookies")
+        displayAutoClicker.innerHTML = ("Auto Clicker custa" + ' ' + Math.floor(autoclickercost*100)/100 + ' ' +'<img id="playImage" class="image" style="height: 15px; width: 15px;" src="images/Cookie-Download-PNG.png" draggable="false"></img>')
     }
     else{
         alert("not enough cookies!")
