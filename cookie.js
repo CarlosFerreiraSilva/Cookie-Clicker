@@ -1,7 +1,7 @@
 
 let cookie = 0;
 let cps = 0;
-let cpc = 1;
+let clickpower = 1;
 
 let autoclicker = document.getElementById('AutoClicker')
 let displayAutoClicker = document.getElementById('displayAutoClicker')
@@ -53,13 +53,13 @@ function displayCps(){
 }
 
 function bakecookie() {
-    cookie += cpc;
+    cookie += clickpower;
     displayCookies()
 }
 
-function flyOnePlus(event) {
+function clickAnimation(event) {
     const flyOne = document.createElement('div');
-    flyOne.textContent = '1+';
+    flyOne.textContent = clickpower + '+';
     flyOne.style.position = 'absolute';
     flyOne.style.fontSize = '30px';
     flyOne.style.color = 'white';
@@ -106,57 +106,3 @@ function flyOnePlus(event) {
     animateElement();
 }
 
-function getRandomPosition() {
-    const width = window.innerWidth - 50;
-    const height = window.innerHeight - 50;
-    const x = Math.random() * width;
-    const y = Math.random() * height;
-    return { x, y };
-  }
-  
-  function createRandomElement() {
-    const randomElement = document.getElementById('randomElement');
-    const position = getRandomPosition();
-    randomElement.style.left = position.x + 'px';
-    randomElement.style.top = position.y + 'px';
-    randomElement.style.display = 'block';
-  }
-  
-  function hideRandomElement() {
-    const randomElement = document.getElementById('randomElement');
-    randomElement.style.display = 'none';
-  }
-  
-  function showRandomElementPeriodically() {
-    createRandomElement(); // Show the element immediately
-  
-    setInterval(function () {
-      hideRandomElement(); // Hide the element after 5 minutes
-      setTimeout(createRandomElement, 10); // Show the element after 5 minutes and 1 second
-    }, 5 * 60 * 10); // 5 minutes in milliseconds
-  }
-  
-  document.getElementById('randomElement').addEventListener('click', hideRandomElement);
-  
-  // Wait 5 minutes before starting the periodic appearance
-  setTimeout(showRandomElementPeriodically, 5 * 60 * 10);
-
-  const alertPlaceholder = document.getElementById('liveAlertPlaceholder')
-const appendAlert = (message, type) => {
-  const wrapper = document.createElement('div')
-  wrapper.innerHTML = [
-    `<div class="alert alert-${type} alert-dismissible" role="alert">`,
-    `   <div>${message}</div>`,
-    '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
-    '</div>'
-  ].join('')
-
-  alertPlaceholder.append(wrapper)
-}
-
-const alertTrigger = document.getElementById('liveAlertBtn')
-if (alertTrigger) {
-  alertTrigger.addEventListener('click', () => {
-    appendAlert('Nice, you triggered this alert message!', 'success')
-  })
-}
