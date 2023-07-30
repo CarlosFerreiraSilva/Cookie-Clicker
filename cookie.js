@@ -17,7 +17,7 @@ function AutoClickerClicked(){
         displayCps()
         autoclickers += 1;
         autoclickercost *= 1.3;
-        displayAutoClicker.innerHTML = ( Math.floor(autoclickercost*100)/100 + ' ' +'<img id="playImage" class="image" style="height: 15px; width: 15px;" src="images/Cookie-Download-PNG.png" draggable="false"></img>')
+        displayAutoClicker.innerHTML = ( Math.floor(autoclickercost*100)/100 + ' ' +'<img id="playImage" class="image" style="height: 15px; width: 15px;" src="images/icons/Cookie-Download-PNG.png" draggable="false"></img>')
     }
     else{
         alert("not enough cookies!")
@@ -30,7 +30,7 @@ function GrandmaClicked(){
         displayCookies()
         autoclickers += 1;
         autoclickercost *= 1.3;
-        displayAutoClicker.innerHTML = (Math.floor(autoclickercost*100)/100 + ' ' +'<img id="playImage" class="image" style="height: 15px; width: 15px;" src="images/Cookie-Download-PNG.png" draggable="false"></img>')
+        displayAutoClicker.innerHTML = (Math.floor(autoclickercost*100)/100 + ' ' +'<img id="playImage" class="image" style="height: 15px; width: 15px;" src="images/icons/Cookie-Download-PNG.png" draggable="false"></img>')
     }
     else{
         alert("not enough cookies!")

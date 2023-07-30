@@ -5,7 +5,7 @@ body, html {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url("images/starfall-gif-46.gif");
+    background-image: url("images/backgrounds/starfall-gif-46.gif");
     background-repeat: no-repeat;
     background-size: cover;
   }
@@ -135,4 +135,16 @@ body, html {
     position: absolute;
     cursor: pointer;
     display: none;
+    animation: girar 8s linear infinite;;
+  }
+
+  @keyframes girar {
+    from {
+      transform: rotate(0deg);
+
+    }
+    to {
+      transform: rotate(360deg);
+
+    }
   }

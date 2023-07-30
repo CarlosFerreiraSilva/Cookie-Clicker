@@ -1,9 +1,16 @@
 
     // Obtém referência para a imagem e o elemento de áudio
     const playImage = document.getElementById('playImage');
+    const goldenCookie = document.getElementById('randomElement');
     const autoClicker = document.getElementById('AutoClicker');
+    const upgrades = document.getElementById('upgrades');
+    const closeBtn = document.getElementById('closeBtn');
+    
     const audio = document.getElementById('audio');
+    const clickGCookie = document.getElementById('clickGoldenCookie');
     const buy = document.getElementById('buy');
+    const open = document.getElementById('Open');
+    const Close = document.getElementById('Close');
 
     // Adiciona um ouvinte de eventos à imagem para tocar o som quando clicada
     playImage.addEventListener('click', () => {
@@ -12,10 +19,28 @@
         audio.play();
     });
 
+    upgrades.addEventListener('click', () => {
+        
+        open.currentTime = 0;
+        open.play();
+    });
+
+    closeBtn.addEventListener('click', () => {
+        
+        Close.currentTime = 0;
+        Close.play();
+    });
+
     autoClicker.addEventListener('click', () => {
         
         buy.currentTime = 0;
         buy.play();
+    });
+
+    goldenCookie.addEventListener('click', () => {
+        
+        clickGCookie.currentTime = 0;
+        clickGCookie.play();
     });
 
 
@@ -37,12 +62,12 @@
         pauseButton.addEventListener('click', () => {
             if (backgroundmusic.paused) {
                 backgroundmusic.play(); 
-                image.src = "images/volume (2).png";// Caso a música esteja pausada, toca novamente
+                image.src = "images/icons/volume (2).png";// Caso a música esteja pausada, toca novamente
                 // texto.innerHTML = "Now Playing Art of Silence";
                 // pauseButton.textContent = 'Pausar Música';
             } else {
                 backgroundmusic.pause(); 
-                image.src = "images/volume-mute.png";
+                image.src = "images/icons/volume-mute.png";
                 // texto.innerHTML = "";// Caso a música esteja tocando, pausa
                 // pauseButton.textContent = 'Continuar Música';
             }
