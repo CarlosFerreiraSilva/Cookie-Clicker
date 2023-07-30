@@ -11,72 +11,208 @@
 
 <div class="pai">
     <div style="text-align: center" class="title">
-        <h1 id="number" draggable="false">0 cookies</h1>
+        <h1 id="number" style="margin: 0px;" draggable="false">0 cookies</h1>
+        <p id="cps" draggable="false">por segundo: 0</p> 
     </div><br>
     <div class="cookie" onc>  
         <img id="playImage" class="image" onclick="flyOnePlus(event); bakecookie();" src="images/Cookie-Download-PNG.png" draggable="false">
-        <!-- Audios -->
-        <audio id="audio" src="audios/click1.mp3"></audio>
-        <audio id="backgroundMusic" src="audios/Art-Of-Silence_V2.mp3"></audio>
     </div>
 </div>
 
-<div style="background-color: grey; width: 169px; height: 55px; position: fixed; left: 0; bottom: 0; border-radius: 8%;"><div class="audioIcon">
+<!-- Icone de Audio -->
+<div style="background-color: #212529; width: 169px; height: 55px; position: fixed; left: 0; bottom: 0; border-radius: 8%;"><div class="audioIcon">
     <img id="pauseButton"  src="images/volume-mute.png" alt="" draggable="false">
     <!-- <p id="musicText"></p> -->
 </div>
 
 <!-- Div Pai de Upgrades -->
-
-
-
-<button id="mostrarDiv" style=" position: fixed;
-    left: 5px; bottom: 5px; border-radius: 5%;">Upgrades</button>
-
+<button class="btn btn-primary" style="width: 105px; height: 44px; position: fixed;
+left: 5px; bottom: 5px; border-radius: 5%;" type="button" data-bs-toggle="offcanvas"
+ data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Upgrades
+</button>
 </div>
-<!-- Icone de Audio -->
 
 
+   <div class="offcanvas offcanvas-end"  data-bs-theme="dark" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+     <div class="offcanvas-header">
+       <h1 class="offcanvas-title" id="offcanvasRightLabel">Upgrades</h1>
+       <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+     </div>
+     <div class="offcanvas-body">
 
-<div id="overlay">
-  <div id="modal">
- 
-    <div id="AutoClicker" class="card" style="background-color: white;">
-        <div style="max-width: 300px;">
-            <div class="row g-0">
-              <div class="col">
-                <img src="images/Autoclicker_default.webp" class="img-fluid rounded-start" alt="...">
-              </div>
-              <div class="col">
-                <div class="card-body">
-                  <h5 class="card-title">AutoClicker</h5>
-                  <p style="display: inline-block; vertical-align: bottom; margin: 0;" id="displayAutoClicker">Auto Clicker custa 50 <img id="playImage" class="image" style="height: 15px; width: 15px;" src="images/Cookie-Download-PNG.png" draggable="false"> </p>
-                </div>
+         <!-- Cursor -->
+    <div id="AutoClicker" class="card" style="background-color: #212529;">
+      <div style="max-width: 300px;">
+          <div class="row g-0">
+            <div class="col">
+              <img style="width: 300px;" src="images/CursorIconTransparent.webp" class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col">
+              <div class="card-body">
+                <h5 class="card-title">Cursor</h5>
+                <p style="display: inline-block; vertical-align: bottom; margin: 0;" id="displayAutoClicker">50 <img id="playImage" class="image" style="height: 15px; width: 15px;" src="images/Cookie-Download-PNG.png" draggable="false"> </p>
               </div>
             </div>
           </div>
-    </div>
-        <div class="fechar">
-            <button id="fecharDiv">Fechar</button> 
         </div>
-        
-        
-   </div>
- 
+  </div>
+
+  <!-- Grandma -->
+  <div id="AutoClicker" class="card" style="background-color: #212529;">
+    <div style="width: 300px;">
+        <div class="row g-0">
+          <div class="col">
+            <img style="max-width: 300px;" src="images/GrandmaIconTransparent.webp" class="img-fluid rounded-start" alt="...">
+          </div>
+          <div class="col">
+            <div class="card-body">
+              <h5 class="card-title">Vovó</h5>
+              <p style="display: inline-block; vertical-align: bottom; margin: 0;" id="displayAutoClicker">100 <img id="playImage" class="image" style="height: 15px; width: 15px;" src="images/Cookie-Download-PNG.png" draggable="false"> </p>
+            </div>
+          </div>
+        </div>
+      </div>
 </div>
-    <!-- Scripts  -->
-    <script type="text/javascript" src="audio.js"></script>
-    <script type="text/javascript" src="cookie.js"></script>
-    <script type="text/javascript" src="vanilla-tilt.js"></script>
-    <!-- <script> VanillaTilt.init(document.querySelector(".image"))</script> -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+
+<div id="AutoClicker" class="card" style="background-color: #212529;">
+  <div style="width: 300px;">
+      <div class="row g-0">
+        <div class="col">
+          <img style="max-width: 300px;" src="images/FarmIconTransparent.webp" class="img-fluid rounded-start" alt="...">
+        </div>
+        <div class="col">
+          <div class="card-body">
+            <h5 class="card-title">Fazenda</h5>
+            <p style="display: inline-block; vertical-align: bottom; margin: 0;" id="displayAutoClicker">1100 <img id="playImage" class="image" style="height: 15px; width: 15px;" src="images/Cookie-Download-PNG.png" draggable="false"> </p>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+<div id="AutoClicker" class="card" style="background-color: #212529;">
+  <div style="width: 300px;">
+      <div class="row g-0">
+        <div class="col">
+          <img style="max-width: 300px;" src="images/MineIconTransparent.webp" class="img-fluid rounded-start" alt="...">
+        </div>
+        <div class="col">
+          <div class="card-body">
+            <h5 class="card-title">Mina</h5>
+            <p style="display: inline-block; vertical-align: bottom; margin: 0;" id="displayAutoClicker">12000 <img id="playImage" class="image" style="height: 15px; width: 15px;" src="images/Cookie-Download-PNG.png" draggable="false"> </p>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+<!-- Industry -->
+<div id="AutoClicker" class="card" style="background-color: #212529;">
+  <div style="width: 300px;">
+      <div class="row g-0">
+        <div class="col">
+          <img style="max-width: 300px;" src="images/FactoryIconTransparent.webp" class="img-fluid rounded-start" alt="...">
+        </div>
+        <div class="col">
+          <div class="card-body">
+            <h5 class="card-title">Fábrica</h5>
+            <p style="display: inline-block; vertical-align: bottom; margin: 0;" id="displayAutoClicker">130000 <img id="playImage" class="image" style="height: 15px; width: 15px;" src="images/Cookie-Download-PNG.png" draggable="false"> </p>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+<div id="AutoClicker" class="card" style="background-color: #212529;">
+  <div style="width: 300px;">
+      <div class="row g-0">
+        <div class="col">
+          <img style="max-width: 300px;" src="images/BankIconLarge.webp" class="img-fluid rounded-start" alt="...">
+        </div>
+        <div class="col">
+          <div class="card-body">
+            <h5 class="card-title">Banco</h5>
+            <p style="display: inline-block; vertical-align: bottom; margin: 0;" id="displayAutoClicker">1400000 <img id="playImage" class="image" style="height: 15px; width: 15px;" src="images/Cookie-Download-PNG.png" draggable="false"> </p>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+<div id="AutoClicker" class="card" style="background-color: #212529;">
+  <div style="width: 300px;">
+      <div class="row g-0">
+        <div class="col">
+          <img style="max-width: 300px;" src="images/TempleIconLarge.webp" class="img-fluid rounded-start" alt="...">
+        </div>
+        <div class="col">
+          <div class="card-body">
+            <h5 class="card-title">Templo</h5>
+            <p style="display: inline-block; vertical-align: bottom; margin: 0;" id="displayAutoClicker">20000000 <img id="playImage" class="image" style="height: 15px; width: 15px;" src="images/Cookie-Download-PNG.png" draggable="false"> </p>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+<div id="AutoClicker" class="card" style="background-color: #212529;">
+  <div style="width: 300px;">
+      <div class="row g-0">
+        <div class="col">
+          <img style="max-width: 300px;" src="images/WizardTowerIconLarge.webp" class="img-fluid rounded-start" alt="...">
+        </div>
+        <div class="col">
+          <div class="card-body">
+            <h5 class="card-title">Torre de Bruxos</h5>
+            <p style="display: inline-block; vertical-align: bottom; margin: 0;" id="displayAutoClicker">330000000 <img id="playImage" class="image" style="height: 15px; width: 15px;" src="images/Cookie-Download-PNG.png" draggable="false"> </p>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+<!-- Javascript -->
+<div id="AutoClicker" class="card" style="background-color: #212529;">
+<div style="width: 300px;">
+    <div class="row g-0">
+      <div class="col">
+        <img style="max-width: 300px;" src="images/Javascript_console_portrait.webp" class="img-fluid rounded-start" alt="...">
+      </div>
+      <div class="col">
+        <div class="card-body">
+          <h5 class="card-title">Javascript</h5>
+          <p style="display: inline-block; vertical-align: bottom; margin: 0;" id="displayAutoClicker">5100000000 <img id="playImage" class="image" style="height: 15px; width: 15px;" src="images/Cookie-Download-PNG.png" draggable="false"> </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+     </div>
+   </div>
+
+<!-- Cookie Dourado -->
+  <img id="randomElement" class="image" src="images/Cookie-Download-PNG.png" draggable="false">
+
+<!-- Audios -->
+   <audio id="audio" src="audios/click1.mp3"></audio>
+   <audio id="backgroundMusic" src="audios/Art-Of-Silence_V2.mp3"></audio>
+   <audio id="buy" src="audios/buy1.mp3"></audio>
+
+<!-- Scripts  -->
+   <script type="text/javascript" src="audio.js"></script>
+   <script type="text/javascript" src="cookie.js"></script>
+   <script type="text/javascript" src="vanilla-tilt.js"></script>
+   <!-- <script> VanillaTilt.init(document.querySelector(".image"))</script> -->
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 
     <script>document.getElementById('mostrarDiv').addEventListener('click', function() {
-        document.getElementById('overlay').style.display = 'block';
+        document.getElementById('modal').style.display = 'block';
       });
       
       document.getElementById('fecharDiv').addEventListener('click', function() {
-        document.getElementById('overlay').style.display = 'none';
+        document.getElementById('modal').style.display = 'none';
       });</script>
     
 </body>

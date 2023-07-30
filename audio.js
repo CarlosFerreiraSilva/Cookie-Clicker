@@ -1,13 +1,21 @@
 
     // Obtém referência para a imagem e o elemento de áudio
     const playImage = document.getElementById('playImage');
+    const autoClicker = document.getElementById('AutoClicker');
     const audio = document.getElementById('audio');
+    const buy = document.getElementById('buy');
 
     // Adiciona um ouvinte de eventos à imagem para tocar o som quando clicada
     playImage.addEventListener('click', () => {
         
         audio.currentTime = 0;
         audio.play();
+    });
+
+    autoClicker.addEventListener('click', () => {
+        
+        buy.currentTime = 0;
+        buy.play();
     });
 
 

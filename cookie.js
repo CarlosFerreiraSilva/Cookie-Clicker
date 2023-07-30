@@ -1,5 +1,6 @@
 
 let cookie = 0;
+let cps = 0;
 let cpc = 1;
 
 let autoclicker = document.getElementById('AutoClicker')
@@ -12,9 +13,24 @@ function AutoClickerClicked(){
     if(cookie >= autoclickercost){
         cookie -= autoclickercost
         displayCookies()
+        cps += 1;
+        displayCps()
         autoclickers += 1;
         autoclickercost *= 1.3;
-        displayAutoClicker.innerHTML = ("Auto Clicker custa" + ' ' + Math.floor(autoclickercost*100)/100 + ' ' +'<img id="playImage" class="image" style="height: 15px; width: 15px;" src="images/Cookie-Download-PNG.png" draggable="false"></img>')
+        displayAutoClicker.innerHTML = ( Math.floor(autoclickercost*100)/100 + ' ' +'<img id="playImage" class="image" style="height: 15px; width: 15px;" src="images/Cookie-Download-PNG.png" draggable="false"></img>')
+    }
+    else{
+        alert("not enough cookies!")
+    }
+}
+
+function GrandmaClicked(){
+    if(cookie >= autoclickercost){
+        cookie -= autoclickercost
+        displayCookies()
+        autoclickers += 1;
+        autoclickercost *= 1.3;
+        displayAutoClicker.innerHTML = (Math.floor(autoclickercost*100)/100 + ' ' +'<img id="playImage" class="image" style="height: 15px; width: 15px;" src="images/Cookie-Download-PNG.png" draggable="false"></img>')
     }
     else{
         alert("not enough cookies!")
@@ -29,6 +45,11 @@ displayCookies()
 
 function displayCookies(){
     document.getElementById('number').innerHTML =   Math.floor(cookie*100)/100 + ' ' + "cookies";
+}
+
+
+function displayCps(){
+    document.getElementById('cps').innerHTML = "por segundo:" + ' ' + Math.floor(cps*100)/100;
 }
 
 function bakecookie() {
@@ -83,4 +104,59 @@ function flyOnePlus(event) {
     }
 
     animateElement();
+}
+
+function getRandomPosition() {
+    const width = window.innerWidth - 50;
+    const height = window.innerHeight - 50;
+    const x = Math.random() * width;
+    const y = Math.random() * height;
+    return { x, y };
+  }
+  
+  function createRandomElement() {
+    const randomElement = document.getElementById('randomElement');
+    const position = getRandomPosition();
+    randomElement.style.left = position.x + 'px';
+    randomElement.style.top = position.y + 'px';
+    randomElement.style.display = 'block';
+  }
+  
+  function hideRandomElement() {
+    const randomElement = document.getElementById('randomElement');
+    randomElement.style.display = 'none';
+  }
+  
+  function showRandomElementPeriodically() {
+    createRandomElement(); // Show the element immediately
+  
+    setInterval(function () {
+      hideRandomElement(); // Hide the element after 5 minutes
+      setTimeout(createRandomElement, 10); // Show the element after 5 minutes and 1 second
+    }, 5 * 60 * 10); // 5 minutes in milliseconds
+  }
+  
+  document.getElementById('randomElement').addEventListener('click', hideRandomElement);
+  
+  // Wait 5 minutes before starting the periodic appearance
+  setTimeout(showRandomElementPeriodically, 5 * 60 * 10);
+
+  const alertPlaceholder = document.getElementById('liveAlertPlaceholder')
+const appendAlert = (message, type) => {
+  const wrapper = document.createElement('div')
+  wrapper.innerHTML = [
+    `<div class="alert alert-${type} alert-dismissible" role="alert">`,
+    `   <div>${message}</div>`,
+    '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
+    '</div>'
+  ].join('')
+
+  alertPlaceholder.append(wrapper)
+}
+
+const alertTrigger = document.getElementById('liveAlertBtn')
+if (alertTrigger) {
+  alertTrigger.addEventListener('click', () => {
+    appendAlert('Nice, you triggered this alert message!', 'success')
+  })
 }

@@ -114,3 +114,11 @@ body, html {
   h4{
     margin: 0;
   }
+
+  #randomElement {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    cursor: pointer;
+    display: none;
+  }
