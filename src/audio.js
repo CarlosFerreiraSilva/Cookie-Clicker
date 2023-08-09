@@ -6,7 +6,7 @@
     const upgrades = document.getElementById('upgrades');
     const closeBtn = document.getElementById('closeBtn');
     
-    const audio = document.getElementById('audio');
+    const background = document.getElementById('audio');
     const clickGCookie = document.getElementById('clickGoldenCookie');
     const buy = document.getElementById('buy');
     const open = document.getElementById('Open');
@@ -15,8 +15,8 @@
     // Adiciona um ouvinte de eventos à imagem para tocar o som quando clicada
     playImage.addEventListener('click', () => {
         
-        audio.currentTime = 0;
-        audio.play();
+        background.currentTime = 0;
+        background.play();
     });
 
     upgrades.addEventListener('click', () => {
