@@ -1,27 +1,53 @@
 let cookie = 0
+let autoclickers = 0;
+let autoclickercost = 50;
+let cps = 0;
+
+const menuButton = document.getElementById('menuButton');
+const menu = document.getElementById('Menu');
+
 
 window.addEventListener("DOMContentLoaded", () => {
     const savedCookie = localStorage.getItem("username");
     if (savedCookie !== null) {
         cookie = parseFloat(savedCookie);
     }
+    const savedClicker = localStorage.getItem("autoclicker");
+    if (savedClicker !== null) {
+        autoclickers = parseFloat(savedClicker);
+        displayCps()
+    }
+    const savedCps = localStorage.getItem("cps");
+    if (savedCps !== null) {
+        cps = parseFloat(savedCps);
+        displayCps()
+    }
+    const autoCost = localStorage.getItem("autoCost");
+    if (autoCost !== null){
+        autoclickercost = parseFloat(autoCost);
+        displayAutoClicker.innerHTML = ( Math.floor(autoclickercost*100)/100 + ' ' +'<img id="playImage" class="image" style="height: 15px; width: 15px;" src="images/icons/Cookie-Download-PNG.png" draggable="false"></img>')
+    }
     console.log(cookie);
+    console.log(autoclickers);
 });
 
 
-let cps = 0;
+
 let clickpower = 1;
 
 let autoclicker = document.getElementById('AutoClicker')
 let displayAutoClicker = document.getElementById('displayAutoClicker')
 
 function clearCo(){
-    localStorage.removeItem("username");
-    console.log(username);
+    localStorage.clear()
+    cookie = 0
+    cps = 0
+    autoclickers = 0
+    displayCookies()
+    displayCps()
 }
+
 autoclicker.addEventListener("click", AutoClickerClicked)
-let autoclickers = 0;
-let autoclickercost = 50;
 function AutoClickerClicked(){
     if(cookie >= autoclickercost){
         cookie -= autoclickercost
@@ -30,6 +56,10 @@ function AutoClickerClicked(){
         displayCps()
         autoclickers += 1;
         autoclickercost *= 1.3;
+        localStorage.setItem("cps", cps.toString());
+        localStorage.setItem("autoclicker", autoclickers.toString());
+        localStorage.setItem("autoCost", autoclickercost.toString());
+      
         displayAutoClicker.innerHTML = ( Math.floor(autoclickercost*100)/100 + ' ' +'<img id="playImage" class="image" style="height: 15px; width: 15px;" src="images/icons/Cookie-Download-PNG.png" draggable="false"></img>')
     }
     else{

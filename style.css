@@ -22,7 +22,17 @@ body, html {
       transform: scale(1); /* Tamanho final, volta ao tamanho original */
     }
   }
+  .slide-in {
+    left: 0;
+    transition: left 0.3s ease; /* Adicione uma transição suave na propriedade left */
+  }
 
+  #menuButton{
+    background-color: #212529; width: 100px; height: 55px; position: fixed; left: 0; bottom: 0; border-radius: 8%;
+  }
+#menuButton:hover{
+  background-color: #404952;
+}
 .cookie{
     cursor: pointer;
     background-color: transparent;

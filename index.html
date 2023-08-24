@@ -12,8 +12,8 @@
 </head>
 <body>
 
-  <!-- <button class="btn btn-secondary" onclick="clearCo()">Delete</button> -->
-  <div class="intro">
+
+  <div class="intro" draggable="false">
     <h1 class="logo-header">
       <span class="logo">Cookie &nbsp;</span><span class="logo">Clicker.</span>
     </h1>
@@ -31,19 +31,24 @@
 </div>
 
 <!-- Icone de Audio -->
-<div style="background-color: #212529; width: 169px; height: 55px; position: fixed; left: 0; bottom: 0; border-radius: 8%;"><div class="audioIcon">
-    <img id="pauseButton" " src="images/icons/volume-mute.png" alt="" draggable="false">
-    <!-- <p id="musicText"></p> -->
-</div>
-
-<!-- Div Pai de Upgrades -->
-<button class="btn btn-primary" id="upgrades" style="width: 105px; height: 44px; position: fixed;
+<button id="menuButton"   onclick="document.getElementById('Menu').style.display = 'inline'; document.getElementById('menuButton').style.display = 'none'" >Menu</button>
+<div id="Menu" style="background-color: #212529; width: 300px; height: 55px; position: fixed; left: 0; bottom: 0; border-radius: 8%; display: none;"><div class="audioIcon">
+  <button class="btn btn-primary" id="upgrades" style="width: 105px; height: 44px; position: fixed;
 left: 5px; bottom: 5px; border-radius: 5%;" type="button" data-bs-toggle="offcanvas"
  data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Upgrades
 </button>
+<button class="btn btn-danger" id="upgrades" style="width: 105px; height: 44px; position: fixed;
+left: 115px; bottom: 5px; border-radius: 5%;" type="button" onclick="clearCo()">Delete
+</button>
+    <img id="pauseButton" src="images/icons/volume-mute.png" style="position: fixed; left: 230px; bottom: 10px; " alt="" draggable="false">
+    <!-- <p id="musicText"></p> -->
+    <button onclick="document.getElementById('Menu').style.display = 'none'; document.getElementById('menuButton').style.display = 'inline'" class="btn btn-secondary" style="position: fixed; left: 275px; width: 23px; padding: 0; height: 53px; bottom: 0;" >&lt;</button>
 </div>
 
+<!-- Div Pai de Upgrades -->
 
+
+</div>
    <div class="offcanvas offcanvas-end"  data-bs-theme="dark" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
      <div class="offcanvas-header">
        <h1 class="offcanvas-title" style=" font-family: 'Merriweather', Georgia,serif; font-weight: bold;" id="offcanvasRightLabel">Upgrades</h1>
