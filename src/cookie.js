@@ -1,11 +1,24 @@
+let cookie = 0
 
-let cookie = 0;
+window.addEventListener("DOMContentLoaded", () => {
+    const savedCookie = localStorage.getItem("username");
+    if (savedCookie !== null) {
+        cookie = parseFloat(savedCookie);
+    }
+    console.log(cookie);
+});
+
+
 let cps = 0;
 let clickpower = 1;
 
 let autoclicker = document.getElementById('AutoClicker')
 let displayAutoClicker = document.getElementById('displayAutoClicker')
 
+function clearCo(){
+    localStorage.removeItem("username");
+    console.log(username);
+}
 autoclicker.addEventListener("click", AutoClickerClicked)
 let autoclickers = 0;
 let autoclickercost = 50;
@@ -41,6 +54,7 @@ function GrandmaClicked(){
 setInterval(function(){
 cookie = cookie + autoclickers*.1
 displayCookies()
+localStorage.setItem("username", cookie.toString());
 },100)
 
 function displayCookies(){
